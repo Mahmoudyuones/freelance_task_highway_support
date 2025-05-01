@@ -39,9 +39,9 @@ class _VerificationScreenState extends State<VerificationScreen> {
   @override
   Widget build(BuildContext context) {
     final defaultPinTheme = PinTheme(
-      width: 56,
-      height: 56,
-      textStyle: const TextStyle(fontSize: 22, color: ColorsManager.black),
+      width: 23.w,
+      height: 23.h,
+      textStyle: TextStyle(fontSize: 10.sp, color: ColorsManager.black),
       decoration: BoxDecoration(
         borderRadius: BorderRadius.circular(5.5.r),
         border: Border.all(color: ColorsManager.grey),
@@ -130,9 +130,24 @@ class _VerificationScreenState extends State<VerificationScreen> {
               ),
               TextButton(
                 onPressed: () {},
-                child: Text(
-                  'Didn’t receive the code? Resend it',
-                  style: TextTheme.of(context).titleSmall,
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    Text(
+                      "Didn't receive the code? ",
+                      style: StyleManager().getLightStyle(
+                        fontSize: FontSize.s10,
+                        color: ColorsManager.black,
+                      ),
+                    ),
+                    Text(
+                      'Resend it',
+                      style: StyleManager().getLightStyle(
+                        fontSize: FontSize.s10,
+                        color: ColorsManager.primaryColor,
+                      ),
+                    ),
+                  ],
                 ),
               ),
               DefaultElevatedButton(onPressed: () {}, text: "Continue"),

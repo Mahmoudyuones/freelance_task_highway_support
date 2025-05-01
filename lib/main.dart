@@ -25,7 +25,7 @@ class HighwaySupport extends StatelessWidget {
               VerificationScreen.routeName: (_) => VerificationScreen(),
               PersonalInformation.routeName: (_) => PersonalInformation(),
             },
-            initialRoute: VerificationScreen.routeName,
+            initialRoute: PersonalInformation.routeName,
             theme: AppTheme.lightThem,
             themeMode: ThemeMode.light,
           ),

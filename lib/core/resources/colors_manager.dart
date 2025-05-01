@@ -10,4 +10,5 @@ class ColorsManager {
   static const Color textColor = Color(0xff63666A);
   static Color grey = Colors.grey.shade400;
   static const Color red = Color(0xffFF0000);
+  static const Color lightBlue = Color(0xffDBEAFE);
 }

@@ -61,4 +61,28 @@ class Validators {
     }
     return null;
   }
+
+  static String? validateVehicleNumber(String? val) {
+    if (val == null || val.isEmpty) {
+      return "Vehicle Number Required";
+    }
+    return null;
+  }
+
+  static String? validateYear(String? val) {
+    if (val == null || val.trim().isEmpty) {
+      return 'Year is required';
+    }
+
+    final int? year = int.tryParse(val);
+    final int currentYear = DateTime.now().year;
+
+    if (year == null) {
+      return 'Enter a valid numeric year';
+    } else if (year < 1900 || year > currentYear) {
+      return 'Enter a year between 1900 and $currentYear ';
+    }
+
+    return null;
+  }
 }

@@ -3,6 +3,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:freelance_task_highway_support/core/resources/app_theme.dart';
 import 'package:freelance_task_highway_support/features/identity_documents_screen.dart';
 import 'package:freelance_task_highway_support/features/personal_information_screen.dart';
+import 'package:freelance_task_highway_support/features/vehicle_information_screen.dart';
 import 'package:freelance_task_highway_support/features/verfiication_screen.dart';
 
 void main() {
@@ -27,8 +28,10 @@ class HighwaySupport extends StatelessWidget {
               PersonalInformation.routeName: (_) => PersonalInformation(),
               IdentityDocumentsScreen.routeName:
                   (_) => IdentityDocumentsScreen(),
+              VehicleInformationScreen.routeName:
+                  (_) => VehicleInformationScreen(),
             },
-            initialRoute: PersonalInformation.routeName,
+            initialRoute: VehicleInformationScreen.routeName,
             theme: AppTheme.lightThem,
             themeMode: ThemeMode.light,
           ),

@@ -58,7 +58,7 @@ class _PersonalInformationState extends State<PersonalInformation> {
                 width: 47.w,
                 height: 47.h,
                 child: Icon(
-                  Icons.person_2,
+                  Icons.perm_identity,
                   size: 20.sp,
                   color: ColorsManager.primaryColor,
                 ),
@@ -84,7 +84,6 @@ class _PersonalInformationState extends State<PersonalInformation> {
               DefaultTextFormField(
                 hintText: 'Enter UserName',
                 label: "User Name",
-                isPassword: false,
                 controller: userNameController,
                 validator: (value) {
                   // write validate logic
@@ -104,7 +103,6 @@ class _PersonalInformationState extends State<PersonalInformation> {
               DefaultTextFormField(
                 hintText: 'Enter First Name',
                 label: "First Name",
-                isPassword: false,
                 controller: userNameController,
                 validator: (value) {
                   // write validate logic
@@ -124,7 +122,6 @@ class _PersonalInformationState extends State<PersonalInformation> {
               DefaultTextFormField(
                 hintText: 'Enter Middle Name',
                 label: "Middle Name",
-                isPassword: false,
                 controller: userNameController,
                 validator: (value) {
                   // write validate logic
@@ -144,7 +141,6 @@ class _PersonalInformationState extends State<PersonalInformation> {
               DefaultTextFormField(
                 hintText: 'Enter Last Name',
                 label: "Last Name",
-                isPassword: false,
                 controller: userNameController,
                 validator: (value) {
                   // write validate logic

@@ -23,6 +23,7 @@ class DefaultElevatedButton extends StatelessWidget {
     return ElevatedButton(
       onPressed: onPressed,
       style: ElevatedButton.styleFrom(
+        side: textColor != null ? BorderSide(color: textColor!) : null,
         backgroundColor: backGroundColor ?? ColorsManager.primaryColor,
         fixedSize: Size(MediaQuery.of(context).size.width, 22.h),
         shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(5.r)),
@@ -30,7 +31,7 @@ class DefaultElevatedButton extends StatelessWidget {
       child: Text(
         text,
         style: StyleManager().getSemiBoldStyle(
-          color: ColorsManager.white,
+          color: textColor ?? ColorsManager.white,
           fontSize: FontSize.s11,
         ),
       ),

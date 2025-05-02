@@ -5,9 +5,9 @@ import 'package:freelance_task_highway_support/core/resources/colors_manager.dar
 class DefaultTextFormField extends StatefulWidget {
   final String hintText;
   final IconData? icon;
+  final IconData? suffixIcon;
   final String label;
   final String? Function(String?)? validator;
-  final bool isPassword;
   final TextEditingController controller;
   const DefaultTextFormField({
     super.key,
@@ -15,8 +15,8 @@ class DefaultTextFormField extends StatefulWidget {
     this.icon,
     required this.label,
     this.validator,
-    required this.isPassword,
     required this.controller,
+    this.suffixIcon,
   });
 
   @override
@@ -24,31 +24,21 @@ class DefaultTextFormField extends StatefulWidget {
 }
 
 class _DefaultTextFormFieldState extends State<DefaultTextFormField> {
-  late bool isObscure = widget.isPassword;
   @override
   Widget build(BuildContext context) {
     return TextFormField(
       validator: widget.validator,
-      obscureText: isObscure,
       controller: widget.controller,
       autovalidateMode: AutovalidateMode.onUserInteraction,
       decoration: InputDecoration(
         labelStyle: TextStyle(color: ColorsManager.textColor),
         hintText: widget.hintText,
-        suffixIcon:
-            widget.isPassword
-                ? IconButton(
-                  onPressed: () {
-                    setState(() {
-                      isObscure = !isObscure;
-                    });
-                  },
-                  icon: Icon(
-                    isObscure ? Icons.visibility_off : Icons.visibility,
-                    color: ColorsManager.textColor,
-                  ),
-                )
-                : null,
+        suffixIcon: IconButton(
+          onPressed: () {
+            setState(() {});
+          },
+          icon: Icon(widget.suffixIcon, color: ColorsManager.textColor),
+        ),
         prefixIcon:
             widget.icon == null
                 ? null

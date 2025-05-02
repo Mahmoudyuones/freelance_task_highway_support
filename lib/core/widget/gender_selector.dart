@@ -2,8 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class GenderSelector extends StatefulWidget {
-  const GenderSelector({super.key});
-
+  const GenderSelector({super.key, required this.onGenderSelected});
+  final Function onGenderSelected;
   @override
   State<GenderSelector> createState() => _GenderSelectorState();
 }
@@ -36,6 +36,7 @@ class _GenderSelectorState extends State<GenderSelector> {
         onTap: () {
           setState(() {
             selectedGender = gender;
+            widget.onGenderSelected(selectedGender);
           });
         },
         child: Container(

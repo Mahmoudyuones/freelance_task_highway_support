@@ -28,7 +28,7 @@ class HighwaySupport extends StatelessWidget {
               IdentityDocumentsScreen.routeName:
                   (_) => IdentityDocumentsScreen(),
             },
-            initialRoute: IdentityDocumentsScreen.routeName,
+            initialRoute: PersonalInformation.routeName,
             theme: AppTheme.lightThem,
             themeMode: ThemeMode.light,
           ),

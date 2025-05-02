@@ -2,9 +2,9 @@ class Validators {
   static String? isValidIDCardNumber(String? val) {
     final RegExp idRegex = RegExp(r'^\d{14}$');
     if (val == null || val.isEmpty) {
-      return "This Field is required";
+      return "This field is required";
     } else if (!idRegex.hasMatch(val)) {
-      return 'The ID must be 14 number only';
+      return 'The ID must be 14 digits only';
     } else {
       return null;
     }
@@ -13,11 +13,52 @@ class Validators {
   static String? isValidLicenseNumber(String? val) {
     final RegExp idRegex = RegExp(r'^\d{14}$');
     if (val == null || val.isEmpty) {
-      return "This Field is required";
+      return "This field is required";
     } else if (!idRegex.hasMatch(val)) {
-      return 'The License ID must be 14 number only';
+      return 'The License ID must be 14 digits only';
     } else {
       return null;
     }
+  }
+
+  static String? validateUsername(String? val) {
+    final RegExp usernameRegex = RegExp(r'^[a-zA-Z0-9,.-]+$');
+    if (val == null || val.isEmpty) {
+      return 'This field is required';
+    } else if (!usernameRegex.hasMatch(val)) {
+      return 'Enter a valid username';
+    } else {
+      return null;
+    }
+  }
+
+  static String? validateFirstName(String? val) {
+    final RegExp nameRegex = RegExp(r'^[a-zA-Z\u0621-\u064A\s\-]{2,}$');
+    if (val == null || val.trim().isEmpty) {
+      return 'First name is required';
+    } else if (!nameRegex.hasMatch(val)) {
+      return 'Enter a valid first name';
+    }
+    return null;
+  }
+
+  static String? validateMiddleName(String? val) {
+    final RegExp nameRegex = RegExp(r'^[a-zA-Z\u0621-\u064A\s\-]{2,}$');
+    if (val == null || val.trim().isEmpty) {
+      return 'Middle name is required';
+    } else if (!nameRegex.hasMatch(val)) {
+      return 'Enter a valid middle name';
+    }
+    return null;
+  }
+
+  static String? validateLastName(String? val) {
+    final RegExp nameRegex = RegExp(r'^[a-zA-Z\u0621-\u064A\s\-]{2,}$');
+    if (val == null || val.trim().isEmpty) {
+      return 'Last name is required';
+    } else if (!nameRegex.hasMatch(val)) {
+      return 'Enter a valid last name';
+    }
+    return null;
   }
 }

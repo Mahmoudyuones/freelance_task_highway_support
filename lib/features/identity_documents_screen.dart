@@ -206,6 +206,7 @@ class _IdentityDocumentsScreenState extends State<IdentityDocumentsScreen> {
                         SnackBar(
                           content: Text('Complete Your profile'),
                           backgroundColor: ColorsManager.red,
+                          duration: Duration(seconds: 1),
                         ),
                       );
                     }
